@@ -107,6 +107,7 @@ function makeParticles(){
 function sampleText(){
   const fs=Math.min(W*.16,H*.3);
   const ow=Math.ceil(W),oh=Math.ceil(fs*1.6);
+  if(ow<2||oh<2)return[[0,0]];
   const oc=document.createElement('canvas');oc.width=ow;oc.height=oh;
   const o=oc.getContext('2d');
   o.font=`700 ${fs}px ${NAMEF}`;o.textAlign='center';o.textBaseline='middle';
